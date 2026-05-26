@@ -1,0 +1,52 @@
+/******************************************************************************
+
+Questão 3. Crie um procedimento que recebe um valor inteiro N por parâmetro e mostra a tabuada de N, no formato:
+1 x N = N
+2 x N = 2N
+ ...
+10 x N = 10N
+
+Por exemplo, para um parâmetro com valor 140, o procedimento deve imprimir o que segue:
+1 x 140 = 140
+2 x 140 = 280
+3 x 140 = 420
+4 x 140 = 560
+5 x 140 = 700
+6 x 140 = 840
+7 x 140 = 980
+8 x 140 = 1120
+9 x 140 = 1260
+10 x 140 = 1400
+
+Crie um main para chamar seu procedimento, solicitando que o usuário informe um valor entre 2 e 1000 para calcular
+a tabuada (sempre que o usuário digitar um valor inválido, deve ser solicitado que digite novamente).
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <math.h>
+
+void exibeTabuada(int N) {
+    
+    printf("\nTabuada do %d:\n", N);
+    
+    for(int i = 1; i <= 10; i++){
+        printf("%d x %d = %d\n", i, N, i * N);
+    }
+}
+
+int main()
+{
+    int N;
+    
+    do {
+        printf("Digite um número: "); 
+        scanf("%d", &N);
+        
+        if (N < 2 || N > 1000) printf("Valor inválido!\n\n");
+    } while (N < 2 || N > 1000);
+    
+    exibeTabuada(N);
+
+    return 0;
+}
